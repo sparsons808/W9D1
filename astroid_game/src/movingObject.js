@@ -24,6 +24,7 @@ MovingObject.prototype.draw = function(ctx) {
     false
   );
   ctx.fill();
+  console.log("Drew asteroids");
 }
 
 MovingObject.prototype.move = function () {

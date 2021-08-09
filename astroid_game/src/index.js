@@ -1,10 +1,12 @@
 const MovingObject = require("./movingObject.js")
 const Asteroid = require("./asteroid.js")
+const Game = require("./game.js")
+const GameView = require("./game_view.js")
 
 window.MovingObject = MovingObject;
 window.Asteroid = Asteroid;
-
-
+window.Game = Game;
+window.GameView = GameView;
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,27 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = "blue";
-    ctx.fillRect(0, 0, 500, 500);
 
 
-    const mo = new MovingObject({
-        pos: [100, 100],
-        vel: [100, 100],
-        radius: 50,
-        color: "#00FF00"
-    });
+    const gv = new GameView(ctx);
+    gv.start(ctx);
 
-    mo.draw(ctx);
 
-    // setTimeout ( function () {
-    //     console.log("hello")
-    //     mo.move();
-    //     mo.color = 'magenta'
-    //     mo.draw(ctx);
+    // const mo = new MovingObject({
+    //     pos: [100, 100],
+    //     vel: [100, 100],
+    //     radius: 50,
+    //     color: "#00FF00"
+    // });
 
-    // }, 1000)
-    console.log(mo);
+    // const aster = new Asteroid({
+    //     pos: [30, 30]
+    // });
 
 });
 
